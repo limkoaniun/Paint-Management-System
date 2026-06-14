@@ -30,4 +30,28 @@ public class Order
         var total = Products.Sum(p => p.GetFinalPrice());
         return total;
     }
+
+    public PaintProduct GetMostExpensivePaintProduct()
+    {
+        return Products.MaxBy(p => p.Price);
+    }
+
+    public void RemoveProduct(int productId)
+    {
+        Products.RemoveAll(p => p.ProductId == productId);
+    }
+
+    public List<PaintProduct> GetProductsInPriceRange(decimal min, decimal max)
+    {
+        return Products.Where(p => p.Price > min && p.Price < max).ToList();
+    }
+
+    public Dictionary<PaintType, decimal> GetTotalPriceByType()
+    {
+        return Products
+            .GroupBy(p => p.Type)
+            .ToDictionary(group => group.Key, 
+                group => group.Sum(p => p.GetFinalPrice())
+                );
+    }
 }

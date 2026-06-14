@@ -5,10 +5,12 @@ public class PaintProduct : IBuyable
     public const decimal DefaultDiscount = 0.05m;
     public readonly decimal TaxRate;
 
-    public PaintProduct(string name, PaintType type, PaintSpecification specification, decimal price, decimal taxRate,
+    public PaintProduct(string name, int productId, PaintType type, PaintSpecification specification, decimal price,
+        decimal taxRate,
         Brand brand)
     {
         Name = name;
+        ProductId = productId;
         Type = type;
         Specification = specification;
         Price = price;
@@ -17,6 +19,8 @@ public class PaintProduct : IBuyable
     }
 
     public string Name { get; }
+
+    public int ProductId { get; }
     public PaintType Type { get; }
     public PaintSpecification Specification { get; }
     public decimal Price { get; }
@@ -30,7 +34,6 @@ public class PaintProduct : IBuyable
 
     public void DisplayInfo()
     {
-        Console.WriteLine($"Name: {Name}, Type: {Type}");
         Console.WriteLine($"Price: {Price:C}, Final Price: {GetFinalPrice():C}");
         Console.WriteLine($"Name: {Name}, Brand: {Brand.Name}, Type: {Type}");
         Specification.DisplaySpecification();
@@ -42,4 +45,6 @@ public class PaintProduct : IBuyable
 
         return DefaultDiscount;
     }
+
+
 }
