@@ -22,7 +22,7 @@ public class Program
             Console.WriteLine();
         }
 
-        var order = new Order(2, product1);
+        var order = new Order(products);
         order.DisplayOrder();
     }
 }

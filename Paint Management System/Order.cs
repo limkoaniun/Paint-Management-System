@@ -3,31 +3,31 @@ namespace Paint_Management_System;
 public class Order
 {
     public readonly DateTime CreatedAt;
+    public List<PaintProduct> Products { get; }
 
-    public PaintProduct Product { get; }
 
-    public int Quantity { get; }
-
-    public decimal TotalPrice { get; }
-
-    public Order(int quantity, PaintProduct product)
+    public Order(List<PaintProduct> products)
     {
-        Quantity = quantity;
-        Product = product;
+        Products = products;
         CreatedAt = DateTime.Now;
-        TotalPrice = product.GetFinalPrice() * quantity;
     }
 
     public void DisplayOrder()
     {
         Console.WriteLine($"Order created at: {CreatedAt}");
-        Console.WriteLine($"Quantity: {Quantity}");
-        Console.WriteLine($"Total: {TotalPrice:C}");
-        Product.DisplayInfo();
+        foreach (var product in Products)
+        {
+            product.DisplayInfo();
+            Console.WriteLine();
+        }
+
+        Console.WriteLine($"Order Total: {GetTotalOrderPrice():C}");
     }
 
-    public decimal GetTotalPrice()
+
+    public decimal GetTotalOrderPrice()
     {
-        return TotalPrice;
+        var total = Products.Sum(p => p.GetFinalPrice());
+        return total;
     }
 }
