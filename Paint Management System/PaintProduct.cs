@@ -45,6 +45,4 @@ public class PaintProduct : IBuyable
 
         return DefaultDiscount;
     }
-
-
 }

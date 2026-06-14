@@ -3,7 +3,6 @@ namespace Paint_Management_System;
 public class Order
 {
     public readonly DateTime CreatedAt;
-    public List<PaintProduct> Products { get; }
 
 
     public Order(List<PaintProduct> products)
@@ -11,6 +10,8 @@ public class Order
         Products = products;
         CreatedAt = DateTime.Now;
     }
+
+    public List<PaintProduct> Products { get; }
 
     public void DisplayOrder()
     {
@@ -50,8 +51,8 @@ public class Order
     {
         return Products
             .GroupBy(p => p.Type)
-            .ToDictionary(group => group.Key, 
+            .ToDictionary(group => group.Key,
                 group => group.Sum(p => p.GetFinalPrice())
-                );
+            );
     }
 }
