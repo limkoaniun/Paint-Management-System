@@ -1,4 +1,6 @@
-namespace Paint_Management_System;
+using Paint_Management_System.Enums;
+
+namespace Paint_Management_System.Models;
 
 public class Payment
 {

@@ -1,4 +1,7 @@
-namespace Paint_Management_System;
+using Paint_Management_System.Enums;
+using Paint_Management_System.Interfaces;
+
+namespace Paint_Management_System.Models;
 
 public class PaintProduct : IBuyable
 {

@@ -1,4 +1,7 @@
-﻿namespace Paint_Management_System;
+﻿using Paint_Management_System.Enums;
+using Paint_Management_System.Models;
+
+namespace Paint_Management_System;
 
 public class Program
 {
