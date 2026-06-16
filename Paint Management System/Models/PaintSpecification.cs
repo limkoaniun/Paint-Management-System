@@ -1,4 +1,4 @@
-namespace Paint_Management_System;
+namespace Paint_Management_System.Models;
 
 public class PaintSpecification
 {
