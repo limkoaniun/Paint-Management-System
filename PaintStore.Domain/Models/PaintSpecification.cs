@@ -1,4 +1,4 @@
-namespace Paint_Management_System.Models;
+namespace PaintStore.Domain.Models;
 
 public class PaintSpecification
 {

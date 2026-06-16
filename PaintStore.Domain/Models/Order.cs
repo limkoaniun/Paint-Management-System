@@ -1,6 +1,6 @@
-using Paint_Management_System.Enums;
+using PaintStore.Domain.Enums;
 
-namespace Paint_Management_System.Models;
+namespace PaintStore.Domain.Models;
 
 public class Order
 {

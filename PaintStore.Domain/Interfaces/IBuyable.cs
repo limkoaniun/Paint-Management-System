@@ -1,4 +1,4 @@
-namespace Paint_Management_System.Interfaces;
+namespace PaintStore.Domain.Interfaces;
 
 public interface IBuyable
 {

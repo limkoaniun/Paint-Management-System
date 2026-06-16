@@ -1,4 +1,4 @@
-namespace Paint_Management_System.Enums;
+namespace PaintStore.Domain.Enums;
 
 public enum PaymentMethod
 {
